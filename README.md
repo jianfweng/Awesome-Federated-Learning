@@ -1,55 +1,53 @@
-## A Federated Learning research library - FedML: https://fedml.ai
 
-# Awesome-Federated-Learning [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+## Considerable method
+### x - dont think are relevant , hmm - 
 
-A curated list of federated learning publications, re-organized from Arxiv (mostly).
-
-<strong>Last Update: October, 15th, 2020</strong>.	
-
-If your publication is not included here, please email to chaoyang.he@usc.edu
-
-# Foundations and Trends in Machine Learning
-We are thrilled to share that [Advances and Open Problems in Federated Learning](https://arxiv.org/abs/1912.04977) has been accepted to [FnTML](https://www.nowpublishers.com/MAL) (<b>Foundations and Trends in Machine Learning</b>, the chief editor is [Michael Jordan](https://people.eecs.berkeley.edu/~jordan/)).
-
-
-## Publications in Top-tier ML/CV/NLP/DM Conference (ICML, NeurIPS, ICLR, CVPR, ACL, AAAI, KDD)
-### ICML
 | Title                                                                    | Team/Authors              | Venue and Year     | Targeting Problem     | Method                |
 |---|---|---|---|---|
-| [Federated Learning with Only Positive Labels](https://arxiv.org/pdf/2004.10342.pdf)                        | Google Research            |   ICML 2020        | label deficiency in multi-class classification    |  regularization |
-| [SCAFFOLD: Stochastic Controlled Averaging for Federated Learning](https://arxiv.org/abs/1910.06378)        | EPFL, Google Research      |   ICML 2020        | heterogeneous data (non-I.I.D)    | nonconvex/convex optimization with variance reduction   |
-| [FedBoost: A Communication-Efficient Algorithm for Federated Learning](https://proceedings.icml.cc/static/paper_files/icml/2020/5967-Paper.pdf)    | Google Research, NYU       |   ICML 2020        | communication cost    | ensemble algorithm    |
-| [FetchSGD: Communication-Efficient Federated Learning with Sketching](https://arxiv.org/abs/2007.07682)     | UC Berkeley, JHU, Amazon   |   ICML 2020        | communication cost    | compress model updates with Count Sketch   |
-| [From Local SGD to Local Fixed-Point Methods for Federated Learning](https://arxiv.org/pdf/2004.01442.pdf)  | KAUST                      |   ICML 2020        | communication cost    |  Optimization |
+| [Multi-Center Federated Learning. 2020](https://arxiv.org/pdf/2005.01026.pdf) | | | non-I.I.D, personalization | perhaps - which learns multiple global models from the non-IID user data, clustered Federate learning architecture
+|  Personalized Federated Learning with Moreau Envelopes  | The University of Sydney | NeurIPS 2020        |  non-I.I.D, personalization   |   Perhaps - each client optimize a personalized model with added L2 regularization to global model weight |
+| An Efficient Framework for Clustered Federated Learning | UCB | NeurIPS 2020        |    heterogeneous data (non-I.I.D) |  perhaps - adopt k (smaller than client number) number of center model, each client update model to it's clustered (within k) center model.  --clustered Federate learning architecture  |
+| [Life Long Learning: FedFMC: Sequential Efficient Federated Learning on Non-iid Data. 2020](https://arxiv.org/pdf/2006.10937.pdf) | Harvard| | non-I.I.D, personalization | perhaps - dynamically forks devices into updating different global models then merges and consolidates separate models into one -- clustered Federate learning architecture then merge into 1.
+|[FedCD: Improving Performance in non-IID Federated Learning. 2020](https://arxiv.org/pdf/2006.09637.pdf)  | Harvard| | non-I.I.D, personalization | Hmm - clones high-performing models at milestone rounds and deletes low-performing models while updating model scores for each device.
 
-### NeurIPS
+| | | | | 
+| | | | | 
+| | | | | 
+| | | | | 
+| | | | | 
+
+
+### Don't think relevant
+#### empty - havent check
 | Title                                                                    | Team/Authors              | Venue and Year     | Targeting Problem     | Method                |
 |---|---|---|---|---|
 | Lower Bounds and Optimal Algorithms for Personalized Federated Learning | KAUST   | NeurIPS 2020        |  non-I.I.D, personalization   |   |
-| Personalized Federated Learning with Moreau Envelopes  | The University of Sydney | NeurIPS 2020        |  non-I.I.D, personalization   |   |
-| Personalized Federated Learning with Theoretical Guarantees: A Model-Agnostic Meta-Learning Approach | MIT |   NeurIPS 2020        |  non-I.I.D, personalization   |   |
-| Differentially-Private Federated Contextual Bandits                     | MIT            |   NeurIPS 2020        |  Contextual Bandits   |   |
-| Federated Principal Component Analysis                     | Cambridge            |   NeurIPS 2020        |    PCA |   |
-| FedSplit: an algorithmic framework for fast federated optimization                     | UCB            |   NeurIPS 2020        |   Acceleration  |   |
-| Federated Bayesian Optimization via Thompson Sampling | MIT |   NeurIPS 2020        |     |   |
+| Personalized Federated Learning with Theoretical Guarantees: A Model-Agnostic Meta-Learning Approach | MIT |   NeurIPS 2020        |  non-I.I.D, personalization   |  ~X - to find an initial shared model that current or new users can easily adapt to their local dataset |
+| Differentially-Private Federated Contextual Bandits                     | MIT            |   NeurIPS 2020        |  Contextual Bandits   |   X - mandates the need for differentially-private cooperative learning |
+| Federated Principal Component Analysis                     | Cambridge            |   NeurIPS 2020        |    PCA |   X - concerning differentially private algorithm for PCA in the memory-limited setting. |
+| FedSplit: an algorithmic framework for fast federated optimization                     | UCB            |   NeurIPS 2020        |   Acceleration  |  X - focus on model convergence speed |
+| Federated Bayesian Optimization via Thompson Sampling | MIT |   NeurIPS 2020        |     |  X - focus on reducing model parameter for exchanging, using Baysian optimization for zeroth-order/black-box optimization |
 | Robust Federated Learning: The Case of Affine Distribution Shifts | MIT  | NeurIPS 2020        |   Privacy, Robustness  |   |
-| An Efficient Framework for Clustered Federated Learning | UCB | NeurIPS 2020        |    heterogeneous data (non-I.I.D) |   |
-| Distributionally Robust Federated Averaging | PSU |   NeurIPS 2020        |  Privacy, Robustness   |   |
-| Group Knowledge Transfer: Federated Learning of Large CNNs at the Edge | USC |   NeurIPS 2020        |  Efficient Training of Large DNN at Edge   |   |
-| A Scalable Approach for Privacy-Preserving Collaborative Machine Learning  | USC |   NeurIPS 2020        |  Scalability   |   |
-| Tackling the Objective Inconsistency Problem in Heterogeneous Federated Optimization | CMU |   NeurIPS 2020        |   local update step heterogeneity  |   |
-| Attack of the Tails: Yes, You Really Can Backdoor Federated Learning | Wiscosin|   NeurIPS 2020        |  Privacy, Robustness   |   |
+| Distributionally Robust Federated Averaging | PSU |   NeurIPS 2020        |  Privacy, Robustness   |  X - study communication efficient distributed algorithms for distributionally robust federated learning. |
+| Group Knowledge Transfer: Federated Learning of Large CNNs at the Edge | USC |   NeurIPS 2020        |  Efficient Training of Large DNN at Edge   |  X - focus on small edge client optimization trasfer - designs a variant of the alternating minimization approach to train small CNNs on edge nodes and periodically transfer their knowledge by knowledge distillation to a large server-side CNN |
+| A Scalable Approach for Privacy-Preserving Collaborative Machine Learning  | USC |   NeurIPS 2020        |  Scalability   |  X - focus on securly encode the individual datasets to distribute the computation load effectively across many parties. |
+| Tackling the Objective Inconsistency Problem in Heterogeneous Federated Optimization | CMU |   NeurIPS 2020        |   local update step heterogeneity  |  |
+| Attack of the Tails: Yes, You Really Can Backdoor Federated Learning | Wiscosin|   NeurIPS 2020        |  Privacy, Robustness   |  X - deals with adversarial attacks in the form of backdoors during training.  |
 | Federated Accelerated Stochastic Gradient Descent | Stanford |   NeurIPS 2020        |  Acceleration   |   |
 | Inverting Gradients - How easy is it to break privacy in federated learning? | University of Siegen   | NeurIPS 2020        |  Privacy, Robustness   |   |
 | Ensemble Distillation for Robust Model Fusion in Federated Learning  | EPFL |   NeurIPS 2020        |   Privacy, Robustness  |   |
 | Optimal Topology Design for Cross-Silo Federated Learning  | Inria | NeurIPS 2020        | Topology Optimization    |   |
 | Distributed Training with Heterogeneous Data: Bridging Median- and Mean-Based Algorithms | University of Minnesota | NeurIPS 2020 | | | 
-| Distributed Distillation for On-Device Learning | Stanford | NeurIPS 2020 | | |
+| Distributed Distillation for On-Device Learning | Stanford | NeurIPS 2020 | |  ~X - For probelm in FedLearning required communication cost and identical architecture, introduce a distributed distillation algorithm where devices communicate and learn from soft-decision (softmax) outputs,|
 | Byzantine Resilient Distributed Multi-Task Learning | Vanderbilt University | NeurIPS 2020 | | | 
 | Distributed Newton Can Communicate Less and Resist Byzantine Workers | UCB | NeurIPS 2020 | | |
 | Minibatch vs Local SGD for Heterogeneous Distributed Learning | TTIC | NeurIPS 2020 | | |
 | Election Coding for Distributed Learning: Protecting SignSGD against Byzantine Attacks | | NeurIPS 2020 | | |
-
+| [Federated Learning with Only Positive Labels](https://arxiv.org/pdf/2004.10342.pdf)                        | Google Research            |   ICML 2020        | label deficiency in multi-class classification    |    - X introduce new setting s.t each client . [regularization] |
+| [SCAFFOLD: Stochastic Controlled Averaging for Federated Learning](https://arxiv.org/abs/1910.06378)        | EPFL, Google Research      |   ICML 2020        | heterogeneous data (non-I.I.D)    |  X - fnding saddle point in distribute setting with approximation thereof |
+| [FedBoost: A Communication-Efficient Algorithm for Federated Learning](https://proceedings.icml.cc/static/paper_files/icml/2020/5967-Paper.pdf)    | Google Research, NYU       |   ICML 2020        | communication cost    |    X - A communication efficient sesemble algorihm for fedreate learnig with better efficiency|
+| [FetchSGD: Communication-Efficient Federated Learning with Sketching](https://arxiv.org/abs/2007.07682)     | UC Berkeley, JHU, Amazon   |   ICML 2020        | communication cost    | compress model updates with Count Sketch   |
+| [From Local SGD to Local Fixed-Point Methods for Federated Learning](https://arxiv.org/pdf/2004.01442.pdf)  | KAUST                      |   ICML 2020        | communication cost    |  Optimization |
 (according to https://neurips.cc/Conferences/2020/AcceptedPapersInitial)
 
 Note: most of the accepted publications are preparing the camera ready revision, thus we are not sure the detail of their proposed methods
