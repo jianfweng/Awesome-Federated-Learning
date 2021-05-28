@@ -1,1 +1,12 @@
-p
+| Title                                                                    | Team/Authors              | Venue and Year     | Targeting Problem     | Method                |
+|---|---|---|---|---|
+| [Multi-Center Federated Learning. 2020](https://arxiv.org/pdf/2005.01026.pdf) | | | non-I.I.D, personalization | perhaps - which learns multiple global models from the non-IID user data, clustered Federate learning architecture
+|  Personalized Federated Learning with Moreau Envelopes  | The University of Sydney | NeurIPS 2020        |  non-I.I.D, personalization   |   Perhaps - each client optimize a personalized model with added L2 regularization to global model weight |
+| An Efficient Framework for Clustered Federated Learning | UCB | NeurIPS 2020        |    heterogeneous data (non-I.I.D) |  perhaps - adopt k (smaller than client number) number of center model, each client update model to it's clustered (within k) center model.  --clustered Federate learning architecture  |
+| [Life Long Learning: FedFMC: Sequential Efficient Federated Learning on Non-iid Data. 2020](https://arxiv.org/pdf/2006.10937.pdf) | Harvard| | non-I.I.D, personalization | perhaps - dynamically forks devices into updating different global models then merges and consolidates separate models into one -- clustered Federate learning architecture then merge into 1.
+|[FedCD: Improving Performance in non-IID Federated Learning. 2020](https://arxiv.org/pdf/2006.09637.pdf)  | Harvard| | non-I.I.D, personalization | Hmm - clones high-performing models at milestone rounds and deletes low-performing models while updating model scores for each device.
+| [Federated Learning with matched averaging](https://arxiv.org/pdf/2002.06440.pdf)  | IBM Research | ICLR2020 | Distribute optimization & model averaging | Designed a client model aggregating method to reduce impact of soley averaging to gather global model 
+| [Unsupervised Model Personalization while Preserving Privacy and Scalability: An Open Problem](https://openaccess.thecvf.com/content_CVPR_2020/papers/De_Lange_Unsupervised_Model_Personalization_While_Preserving_Privacy_and_Scalability_An_Open_CVPR_2020_paper.pdf) | Huawei research| CVPR2020| Decentralized learning | The work explore the setting with central server optimization with partial localize data, and proceed with further optimization from distributed clients, and also conducts client side model personalization
+| | | | | 
+| | | | | 
+| | | | | 
